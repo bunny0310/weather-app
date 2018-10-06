@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<center>
+					<h3>Weather App!!!</h3>
+				</center>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-md-8 mx-auto">
+			<form action="/" method="post">
+				<div class="form-group">
+					<input type="text" name="city" class="form-control" autocomplete="off" placeholder="Name of the city" value="<%= old_city %>">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary float-right">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col col-md-8 mx-auto">
+			<% if(weather!== null) {%>
+			<div class="alert alert-info"><%= weather %></div>
+			<% } %>
+        <% if(error !== null){ %>
+          <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+		</div>
+	</div>
+</body>
+</html>
